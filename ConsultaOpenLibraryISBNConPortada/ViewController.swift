@@ -102,7 +102,7 @@ class ViewController: UIViewController {
                             self.titulo.text = "Título no definido"
                         }
                         
-                        if let isbnPortada = isbnJSON["covers"] as? String,
+                        if let isbnPortada = isbnJSON["cover"]?["medium"] as? String,
                             let imagen = UIImage(data: NSData(contentsOfURL: NSURL(string: isbnPortada)!)!) {
                             
                             self.portada.image = self.tamañoImagen(imagen, size: self.portada.frame.size)
